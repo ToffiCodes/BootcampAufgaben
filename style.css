@@ -1,0 +1,23 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --clr-accent: darkslateblue;
+  --clr-white: white;
+
+  --s-base: 1rem;
+  --s-border: 0.125rem;
+  --s-radius-outer: 0.75rem;
+  --s-radius-inner: calc(var(--s-radius-outer) / 3);
+}
+
+html {
+  font-family: sans-serif;
+}
+
+body {
+  margin: 2rem;
+}
