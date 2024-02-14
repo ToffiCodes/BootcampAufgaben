@@ -1,12 +1,17 @@
 *,
 *::before,
 *::after {
+  margin: 0px;
+  padding: 0px;
   box-sizing: border-box;
 }
 
 :root {
-  --clr-accent: darkslateblue;
+  --clr-accent1: darkslateblue;
+  --clr-accent2: darkorange;
   --clr-white: white;
+  --clrbg: deepskyblue;
+  --clr-day: gray;
 
   --s-base: 1rem;
   --s-border: 0.125rem;
@@ -20,4 +25,110 @@ html {
 
 body {
   margin: 2rem;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 2fr;
+  gap: none;
+  grid-template-areas: "card-container1 card-container2";
+}
+
+.preview-card {
+  display: grid;
+  padding: 1rem;
+}
+
+.card-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container1 .card-container2 {
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  margin-top: 100px;
+}
+
+.category {
+  background-color: var(--clrbg);
+  padding: 0.15rem;
+  font-size: 0.75rem;
+  border-radius: 0.55rem;
+  width: 4rem;
+  border: none;
+}
+
+.btn {
+  flex-direction: row;
+  object-position: bottom left;
+  color: var(--clr-white);
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 0.25rem;
+  cursor: pointer;
+}
+
+.photo {
+  align-self: center;
+  width: 40rem;
+  height: 20rem;
+  margin: 0.2rem 1rem 2rem;
+  border-radius: 0.2rem;
+}
+
+.card-container1 .btn {
+  background-color: var(--clr-accent1);
+}
+
+.card-container2 .btn {
+  background-color: var(--clr-accent2);
+}
+
+.day .writer {
+  color: var(--clr-day);
+}
+
+.writer .picture1 .picture2 {
+  margin-right: auto;
+}
+
+.card-container1 .picture1 {
+  border: solid 3px var(--clr-accent1);
+  align-items: right;
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+
+.card-container2 .picture2 {
+  border: solid 3px var(--clr-accent2);
+  height: 2.5rem;
+  width: 2.5rem;
+  border-radius: 50%;
+}
+.card-content .day .picture1 .picture2 {
+  font-size: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-container1 {
+  border: 0.2rem solid black;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 8px 8px var(--clr-accent1);
+  border-radius: var(--s-radius-outer);
+}
+
+.card-container2 {
+  border: 0.2rem solid black;
+  border-radius: 0.75rem;
+  padding: 1rem;
+  box-shadow: 8px 8px var(--clr-accent2);
+  border-radius: var(--s-radius-outer);
 }
